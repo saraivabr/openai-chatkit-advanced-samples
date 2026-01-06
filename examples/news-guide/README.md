@@ -611,7 +611,7 @@ frontend/
 1. **Entenda o fluxo de recuperação**
    - Como queries são interpretadas
    - Como múltiplas ferramentas são combinadas
-   - Como resultados são deduplica dos
+   - Como resultados são deduplicados
 
 2. **Explore entity tagging**
    - Como @ triggers o dropdown
