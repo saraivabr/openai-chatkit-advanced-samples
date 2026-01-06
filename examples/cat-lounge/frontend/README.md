@@ -1,30 +1,54 @@
 # ChatKit Frontend
 
-This Vite + React client wraps the ChatKit web component in a slim list UI so you can focus on iterating with the backend agent. It mirrors the root README tone while surfacing the project paths and configuration you need day to day.
+Este cliente Vite + React envolve o componente web ChatKit em uma UI de lista simples para que você possa focar em iterar com o agente backend. Ele espelha o tom do README raiz enquanto apresenta os caminhos de projeto e configuração que você precisa no dia a dia.
 
-## Quick Reference
-- App entry point: `src/main.tsx`
-- ChatKit config helper: `src/lib/config.ts`
-- Cat dashboard UI: `src/App.tsx` and `src/components`
-- Styling: `src/index.css` (Tailwind layers)
+## 📚 Referência Rápida
 
-## Requirements
-- Node.js 20+
-- Backend API running locally (defaults to `http://127.0.0.1:8000`).
+- **Ponto de entrada da aplicação**: `src/main.tsx`
+- **Helper de configuração do ChatKit**: `src/lib/config.ts`
+- **UI do dashboard do gato**: `src/App.tsx` e `src/components`
+- **Estilização**: `src/index.css` (camadas Tailwind)
 
-## Environment Variables
+## ✅ Requisitos
 
-Optional overrides include `VITE_CHATKIT_API_URL`, `VITE_CAT_STATE_API_URL`, and `VITE_CHATKIT_API_DOMAIN_KEY`. If you change them, restart `npm run dev` so Vite reloads the new values.
+- **Node.js** 20 ou superior
+- **API Backend** rodando localmente (padrão: `http://127.0.0.1:8000`)
 
-## Install & Run
+## 🔧 Variáveis de Ambiente
+
+Substituições opcionais incluem:
+- `VITE_CHATKIT_API_URL` - URL da API do ChatKit
+- `VITE_CAT_STATE_API_URL` - URL da API de estado do gato
+- `VITE_CHATKIT_API_DOMAIN_KEY` - Chave de domínio do ChatKit
+
+**⚠️ Importante:** Se você mudá-las, reinicie `npm run dev` para que o Vite recarregue os novos valores.
+
+## 🚀 Instalar e Executar
 
 ```bash
-npm install
-npm run dev
+npm install    # Instala dependências
+npm run dev    # Inicia servidor de desenvolvimento
 ```
 
-The dev server is available at `http://127.0.0.1:5170`, which works for local development. To test remote access flows, you can temporarily expose the app with a tunnel (for example `ngrok http 5170`) after allowlisting that hostname.
+✅ O servidor de desenvolvimento está disponível em `http://127.0.0.1:5170`, que funciona para desenvolvimento local.
 
-For production deployments, host the app on infrastructure you control behind a managed domain. Register that domain on the [domain allowlist page](https://platform.openai.com/settings/organization/security/domain-allowlist), add it to `frontend/vite.config.ts` under `server.allowedHosts`, and set the resulting key via `VITE_CHATKIT_API_DOMAIN_KEY`.
+### Testando Acesso Remoto
 
-Need backend guidance? See the root README for FastAPI setup and domain allowlisting steps.
+Para testar fluxos de acesso remoto, você pode expor temporariamente a aplicação com um túnel (por exemplo `ngrok http 5170`) após adicionar esse hostname à lista de permissões.
+
+### Implantação em Produção
+
+Para implantações em produção:
+
+1. **Hospede a aplicação** em infraestrutura que você controla atrás de um domínio gerenciado
+2. **Registre esse domínio** na [página da lista de permissões de domínios](https://platform.openai.com/settings/organization/security/domain-allowlist)
+3. **Adicione-o** em `frontend/vite.config.ts` em `server.allowedHosts`
+4. **Defina a chave resultante** via `VITE_CHATKIT_API_DOMAIN_KEY`
+
+## 🤔 Precisa de ajuda com o backend?
+
+Veja o README raiz para passos de configuração do FastAPI e lista de permissões de domínio.
+
+---
+
+**💡 Dica:** Este é apenas o frontend. O "cérebro" da aplicação (agente de IA, ferramentas, lógica) está no backend!
